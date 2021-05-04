@@ -68,10 +68,13 @@
     <Compile Include="Assets\Scripts\Behaviours\ProjectileBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviours\SmokeBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviours\StarBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Classes\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PosToMouse.cs" />
     <Compile Include="Assets\Scripts\Spawners\SpawnAsteroids.cs" />
+    <Compile Include="Assets\Scripts\Spawners\SpawnProjectile.cs" />
     <Compile Include="Assets\Scripts\Spawners\SpawnProjectile1.cs" />
     <Compile Include="Assets\Scripts\Spawners\SpawnStars.cs" />
     <None Include="Assets\SpaceShooterRedux\license.txt" />

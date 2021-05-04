@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
+    public GameObject AsteroidParticalPrefab;
+
     float speed = 15;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,5 +26,14 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        print("Asteroid Hit");
+
+        Instantiate(AsteroidParticalPrefab, collision.transform.position, new Quaternion());
+        Destroy(collision.gameObject);
+        Destroy(this.gameObject);
     }
 }

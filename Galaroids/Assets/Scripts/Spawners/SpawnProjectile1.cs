@@ -24,7 +24,7 @@ public class SpawnProjectile1 : MonoBehaviour
             newProjectile = Instantiate(projetilePrefab, new Vector2(ship.position.x, ship.position.y), ship.rotation);
             newProjectile.transform.SetParent(transform);
 
-            coolDown = 30;
+            coolDown = 0;
         }
         coolDown--;
     }

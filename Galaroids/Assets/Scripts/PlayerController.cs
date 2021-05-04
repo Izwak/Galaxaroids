@@ -36,11 +36,20 @@ public class PlayerController : MonoBehaviour
 
         transform.position += new Vector3(velX, 0) * Time.deltaTime;
 
+        float clampedX = Mathf.Clamp(transform.position.x, -GameManager.screenBounds.x, GameManager.screenBounds.x);
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+
         tick++;
         if (tick % 3 == 0 && (playerBody.rotation.eulerAngles.z < 90 || playerBody.rotation.eulerAngles.z > 270))
         {
             GameObject newSmog = Instantiate(SmogPrefab, new Vector2(playerBody.position.x, playerBody.position.y), Quaternion.Euler(0, 0, 180 - angle));
             newSmog.transform.SetParent(SmogFolder);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
+            print("Player Collision Detected");
     }
 }
