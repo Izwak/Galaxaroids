@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnProjectile1 : MonoBehaviour
 {
-    public GameObject projetilePrefab;
     public Transform ship;
 
     int coolDown = 0;
@@ -18,14 +17,16 @@ public class SpawnProjectile1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        coolDown--;
+
+        // Spawn projectile
         if (Input.GetKeyDown(KeyCode.Space) && coolDown <= 0)
         {
             GameObject newProjectile;
-            newProjectile = Instantiate(projetilePrefab, new Vector2(ship.position.x, ship.position.y), ship.rotation);
+            newProjectile = Instantiate(GameManager.ProjectilePrefab, ship.position, ship.rotation);
             newProjectile.transform.SetParent(transform);
 
             coolDown = 0;
         }
-        coolDown--;
     }
 }

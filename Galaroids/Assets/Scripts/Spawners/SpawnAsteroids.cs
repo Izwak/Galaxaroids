@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpawnAsteroids : MonoBehaviour
 {
-    public GameObject Asteroid;
-    int time = 0;
+    int tick = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +15,11 @@ public class SpawnAsteroids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time++;
-        if (time % 50 == 0)
+        tick++;
+        if (tick % 20 == 0)
         {
             Vector2 pos = new Vector2(Random.Range(-GameManager.screenBounds.x, GameManager.screenBounds.x), GameManager.screenBounds.y);
-            GameObject newAsteroid = Instantiate(Asteroid, pos, new Quaternion());
+            GameObject newAsteroid = Instantiate(GameManager.AsteroidPrefab, pos, new Quaternion());
             newAsteroid.transform.SetParent(transform);
         }
     }

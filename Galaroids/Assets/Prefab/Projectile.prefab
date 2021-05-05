@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AsteroidParticalPrefab: {fileID: 1419920696236844963, guid: e6e388daa2391b946bd5163f39e1bc8a,
     type: 3}
+  ParticleFolder: {fileID: 0}
 --- !u!50 &49357190651741254
 Rigidbody2D:
   serializedVersion: 4
